@@ -1,0 +1,17 @@
+@model NotesImageSharingApp.Models.PostViewModel
+
+<form asp-action="Create" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label asp-for="Note.Title"></label>
+        <input asp-for="Note.Title" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Note.Content"></label>
+        <textarea asp-for="Note.Content" class="form-control"></textarea>
+    </div>
+    <div class="form-group">
+        <label asp-for="Image"></label>
+        <input type="file" asp-for="Image" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Create</button>
+</form>

@@ -1,0 +1,22 @@
+@model NotesImageSharingApp.Models.PostViewModel
+
+<form asp-action="Create" asp-controller="Post" enctype="multipart/form-data">
+    <div>
+        <label for="Note">Note</label>
+        <textarea name="Note" required></textarea>
+    </div>
+    <div>
+        <label for="Image">Image</label>
+        <input type="file" name="Image" />
+    </div>
+    <button type="submit">Submit</button>
+</form>
+
+<h3>Comments</h3>
+@foreach (var comment in Model.Comments)
+{
+    <div>
+        <p>@comment.Author: @comment.Content</p>
+        <p>@comment.CreatedDate</p>
+    </div>
+}
