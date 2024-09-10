@@ -13,17 +13,16 @@ namespace NotesImageSharingApp.Models
         [Key]
         public int? ImageId { get; set; }
 
+        
+        
+        public string Title { get; set; }= string.Empty;
 
-        [Required]
-        [StringLength(100)]
-        public string Title { get; set; }
+       
+        public string? Url { get; set; }
 
-        [Required]
-        public string Url { get; set; }
-
-        public DateTime DateCreated { get; set; } = DateTime.Now;
+        public DateTime? DateCreated { get; set; } = DateTime.Now;
 
         // Foreign key to the user
-        public string UserId { get; set; }
+        public string? UserId { get; set; }
     }
 }
