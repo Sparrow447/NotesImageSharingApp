@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("NotesImageSharingApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+17f2ece952cfc5509eac3827eb69e5be22b063e2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7173873ea56b415dd69b1422a49dfe67fd1708a8")]
 [assembly: System.Reflection.AssemblyProductAttribute("NotesImageSharingApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("NotesImageSharingApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
