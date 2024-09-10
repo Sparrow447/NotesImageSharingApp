@@ -11,7 +11,7 @@ namespace NotesImageSharingApp.Models
     public class Image
     {
         [Key]
-        public int? ImageId { get; set; }
+        public int ImageId { get; set; }
 
         
         

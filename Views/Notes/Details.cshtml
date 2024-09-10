@@ -1,0 +1,10 @@
+@model NotesImageSharingApp.Models.Note
+
+<h2>Note Details</h2>
+
+<div>
+    <h3>@Model.Title</h3>
+    <p>@Model.Content</p>
+    <p><strong>Date Created:</strong> @Model.DateCreated</p>
+    <p><a asp-action="Index" class="btn btn-secondary">Back to List</a></p>
+</div>

@@ -1,37 +1,31 @@
-@model IEnumerable<NotesImageSharingApp.Models.Image>
+@model IEnumerable<NotesImageSharingApp.Models.Note>
 
-@{
-    ViewData["Title"] = "Images";
-}
-
-<h1>Images</h1>
+<h2>Notes</h2>
 
 <p>
-    <a href="@Url.Action("Create")" class="btn btn-primary">Create New Image</a>
+    <a asp-action="Create" class="btn btn-primary">Create New Note</a>
 </p>
 
 <table class="table">
     <thead>
         <tr>
             <th>Title</th>
-            <th>Url</th>
+            <th>Content</th>
             <th>Date Created</th>
-            <th>Actions</th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
-        @foreach (var image in Model)
-        {
-            <tr>
-                <td>@image.Title</td>
-                <td>@image.Url</td>
-                <td>@image.DateCreated</td>
-                <td>
-                    <a href="@Url.Action("Details", new { id = image.ImageId })" class="btn btn-info">Details</a>
-                    <a href="@Url.Action("Edit", new { id = image.ImageId })" class="btn btn-warning">Edit</a>
-                    <a href="@Url.Action("Delete", new { id = image.ImageId })" class="btn btn-danger">Delete</a>
-                </td>
-            </tr>
-        }
+    @foreach (var note in Model)
+    {
+        <tr>
+            <td>@note.Title</td>
+            <td>@note.Content</td>
+            <td>@note.DateCreated</td>
+            <td>
+                <a asp-action="Details" asp-route-id="@note.NoteId" class="btn btn-info">Details</a>
+            </td>
+        </tr>
+    }
     </tbody>
 </table>
