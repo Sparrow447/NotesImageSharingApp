@@ -1,0 +1,31 @@
+@model IEnumerable<NotesImageSharingApp.Models.Note>
+
+<h2>Notes</h2>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Create New Note</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Content</th>
+            <th>Date Created</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var note in Model)
+    {
+        <tr>
+            <td>@note.Title</td>
+            <td>@note.Content</td>
+            <td>@note.DateCreated</td>
+            <td>
+                <a asp-action="Details" asp-route-id="@note.NoteId" class="btn btn-info">Details</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

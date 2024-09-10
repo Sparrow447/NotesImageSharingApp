@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/annacornelia/Documents/GitHub/NotesImageSharingApp/NotesImageSharingApp.csproj": {}
+    "/Users/selmersolland/Documents/NotesImageSharingApp/NotesImageSharingApp.csproj": {}
   },
   "projects": {
-    "/Users/annacornelia/Documents/GitHub/NotesImageSharingApp/NotesImageSharingApp.csproj": {
+    "/Users/selmersolland/Documents/NotesImageSharingApp/NotesImageSharingApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/annacornelia/Documents/GitHub/NotesImageSharingApp/NotesImageSharingApp.csproj",
+        "projectUniqueName": "/Users/selmersolland/Documents/NotesImageSharingApp/NotesImageSharingApp.csproj",
         "projectName": "NotesImageSharingApp",
-        "projectPath": "/Users/annacornelia/Documents/GitHub/NotesImageSharingApp/NotesImageSharingApp.csproj",
-        "packagesPath": "/Users/annacornelia/.nuget/packages/",
-        "outputPath": "/Users/annacornelia/Documents/GitHub/NotesImageSharingApp/obj/",
+        "projectPath": "/Users/selmersolland/Documents/NotesImageSharingApp/NotesImageSharingApp.csproj",
+        "packagesPath": "/Users/selmersolland/.nuget/packages/",
+        "outputPath": "/Users/selmersolland/Documents/NotesImageSharingApp/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/annacornelia/.nuget/NuGet/NuGet.Config"
+          "/Users/selmersolland/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"

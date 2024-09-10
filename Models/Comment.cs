@@ -1,3 +1,4 @@
+//comment.cs model
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,12 +10,18 @@ namespace NotesImageSharingApp.Models
 {
     public class Comment
     {
+        [Key]
         public int CommentId { get; set; }
-        public int PostId { get; set; }
-        public string Content { get; set; }
-        public string Author { get; set; }
-        public DateTime CreatedDate { get; set; }
 
-        public Post Post { get; set; }
+      
+        public string? Content { get; set; }
+
+        public DateTime? DateCreated { get; set; } = DateTime.Now;
+
+        // Foreign key to the user
+        public string? UserId { get; set; }
+        // Foreign key to the note or image
+        public int? NoteId { get; set; }
+        public int? ImageId { get; set; }
     }
 }

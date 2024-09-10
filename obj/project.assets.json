@@ -2557,11 +2557,16 @@
     ]
   },
   "packageFolders": {
+<<<<<<< HEAD
     "/Users/annacornelia/.nuget/packages/": {}
+=======
+    "/Users/amiinahmed/.nuget/packages/": {}
+>>>>>>> amiin
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "/Users/annacornelia/Documents/GitHub/NotesImageSharingApp/NotesImageSharingApp.csproj",
       "projectName": "NotesImageSharingApp",
       "projectPath": "/Users/annacornelia/Documents/GitHub/NotesImageSharingApp/NotesImageSharingApp.csproj",
@@ -2570,6 +2575,16 @@
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/annacornelia/.nuget/NuGet/NuGet.Config"
+=======
+      "projectUniqueName": "/Users/amiinahmed/Desktop/school/Webapp/NotesImageSharingApp/NotesImageSharingApp.csproj",
+      "projectName": "NotesImageSharingApp",
+      "projectPath": "/Users/amiinahmed/Desktop/school/Webapp/NotesImageSharingApp/NotesImageSharingApp.csproj",
+      "packagesPath": "/Users/amiinahmed/.nuget/packages/",
+      "outputPath": "/Users/amiinahmed/Desktop/school/Webapp/NotesImageSharingApp/obj/",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "/Users/amiinahmed/.nuget/NuGet/NuGet.Config"
+>>>>>>> amiin
       ],
       "originalTargetFrameworks": [
         "net8.0"

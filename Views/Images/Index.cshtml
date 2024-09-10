@@ -1,0 +1,51 @@
+@model IEnumerable<NotesImageSharingApp.Models.Image>
+
+@{
+    ViewData["Title"] = "Images";
+}
+
+<h1>Images</h1>
+
+<p>
+    <a class="btn btn-primary" asp-action="Create">Create New Image</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.First().Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().Url)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().DateCreated)
+            </th>
+            <th>
+                Actions
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Url)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateCreated)
+                </td>
+                <td>
+                    <a class="btn btn-info" asp-action="Details" asp-route-id="@item.ImageId">Details</a>
+                    <a class="btn btn-warning" asp-action="Edit" asp-route-id="@item.ImageId">Edit</a>
+                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.ImageId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
