@@ -1,38 +1,58 @@
 ﻿@model IEnumerable<NotesImageSharingApp.Models.Note>
 
-<h2>All Notes</h2>
+@{
+    ViewData["Title"] = "Posts";
+}
 
-<!-- Search Bar -->
-<form method="get" action="/Notes/Index">
-    <input type="text" name="searchQuery" placeholder="Search notes" />
-    <button type="submit">Search</button>
-</form>
+<h1>Posts</h1>
 
-<table>
+<p>
+    <a asp-action="Create" class="btn btn-primary">Create New Post</a>
+</p>
+
+<table class="table">
     <thead>
-    <tr>
-        <th>Title</th>
-        <th>Content Preview</th>
-        <th>Date Created</th>
-        <th>Actions</th>
-    </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Content)
+            </th>
+            <th>
+                Image
+            </th>
+            <th></th>
+        </tr>
     </thead>
     <tbody>
     @foreach (var note in Model)
     {
         <tr>
-            <td>@note.Title</td>
-            <td>@note.Content.Substring(0, Math.Min(50, note.Content.Length))...</td>
-            <td>@note.DateCreated</td>
             <td>
-                <a href="/Notes/Details/@note.NoteId" class="btn btn-info">View Details</a>
-                <a href="/Notes/Edit/@note.NoteId" class="btn btn-warning">Edit</a>
-                <a href="/Notes/Delete/@note.NoteId" class="btn btn-danger">Delete</a>
+                @Html.DisplayFor(modelItem => note.Title) <!-- Displays the title of the note -->
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => note.Content) <!-- Displays the content of the note -->
+            </td>
+            <td>
+                @{
+                    // Retrieves the first image from ViewBag.Images where the UserId matches the note's UserId
+                    var image = ViewBag.Images?.FirstOrDefault((Func<dynamic, bool>)(img => img.UserId == note.UserId));
+                    if (image != null)
+                    {
+                        // Displays the image if it exists
+                        <img src="@image.Url" alt="Image" style="max-width: 100px; max-height: 100px;" />
+                    }
+                }
+            </td>
+            <td>
+                <!-- Links to edit, view details, and delete the note -->
+                <a asp-action="Edit" asp-route-id="@note.NoteId" class="btn btn-secondary">Edit</a> |
+                <a asp-action="Details" asp-route-id="@note.NoteId" class="btn btn-info">Details</a> |
+                <a asp-action="Delete" asp-route-id="@note.NoteId" class="btn btn-danger">Delete</a>
             </td>
         </tr>
     }
     </tbody>
 </table>
-
-<!-- Button for creating a new note -->
-<a href="/Notes/Create" class="btn btn-primary">Create New Note</a>

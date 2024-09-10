@@ -1,0 +1,28 @@
+@model NotesImageSharingApp.Models.Post
+
+<h2>@Model.Note</h2>
+<img src="@Model.ImageUrl" alt="Post Image" />
+<p>@Model.CreatedDate</p>
+
+<h3>Comments</h3>
+@foreach (var comment in Model.Comments)
+{
+    <div>
+        <p>@comment.Author: @comment.Content</p>
+        <p>@comment.CreatedDate</p>
+    </div>
+}
+
+<h3>Add a Comment</h3>
+<form asp-action="AddComment" asp-controller="Post">
+    <input type="hidden" name="PostId" value="@Model.PostId" />
+    <div>
+        <label for="Content">Content</label>
+        <textarea name="Content" required></textarea>
+    </div>
+    <div>
+        <label for="Author">Author</label>
+        <input type="text" name="Author" required />
+    </div>
+    <button type="submit">Submit</button>
+</form>
