@@ -15,7 +15,7 @@
 
 <h3>Add a Comment</h3>
 <form asp-action="AddComment" asp-controller="Post">
-    <input type="hidden" name="PostId" value="@Model.Id" />
+    <input type="hidden" name="PostId" value="@Model.PostId" />
     <div>
         <label for="Content">Content</label>
         <textarea name="Content" required></textarea>

@@ -66,6 +66,69 @@ namespace NotesImageSharingApp.Controllers
             return View(model);
         }
 
-        // Other actions like Edit, Delete, etc.
+        public async Task<IActionResult> Edit(int id)
+        {
+            var post = await _context.Posts.FindAsync(id);
+            if (post == null)
+            {
+            return NotFound();
+            }
+            var model = new PostViewModel
+            {
+            Note = post.Note,
+            ImageUrl = post.ImageUrl
+            };
+            return View(model);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Edit(int id, PostViewModel model)
+        {
+            if (id != model.Id)
+            {
+            return NotFound();
+            }
+
+            if (ModelState.IsValid)
+            {
+            var post = await _context.Posts.FindAsync(id);
+            if (post == null)
+            {
+                return NotFound();
+            }
+
+            post.Note = model.Note;
+
+            if (model.Image != null)
+            {
+                var fileName = Path.GetFileName(model.Image.FileName);
+                var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images", fileName);
+                using (var stream = new FileStream(filePath, FileMode.Create))
+                {
+                await model.Image.CopyToAsync(stream);
+                }
+                post.ImageUrl = "/images/" + fileName;
+            }
+
+            _context.Posts.Update(post);
+            await _context.SaveChangesAsync();
+            return RedirectToAction("Index");
+            }
+            return View(model);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var post = await _context.Posts.FindAsync(id);
+            if (post == null)
+            {
+            return NotFound();
+            }
+
+            _context.Posts.Remove(post);
+            await _context.SaveChangesAsync();
+            return RedirectToAction("Index");
+        }
     }
 }

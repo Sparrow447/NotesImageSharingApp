@@ -8,7 +8,8 @@ using NotesImageSharingApp.Models;
 namespace NotesImageSharingApp.Data
 {
     public class ApplicationDbContext : DbContext
-            public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
+    {
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
         }
         public DbSet<Post> Posts { get; set; }
@@ -22,4 +23,4 @@ namespace NotesImageSharingApp.Data
             base.OnModelCreating(modelBuilder);
         }
     }
-
+}

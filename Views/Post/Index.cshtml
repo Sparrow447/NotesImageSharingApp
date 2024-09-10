@@ -1,4 +1,4 @@
-@model NotesImageSharingApp.Models.PostViewModel
+@model IEnumerable<NotesImageSharingApp.Models.PostViewModel>
 
 <form asp-action="Create" asp-controller="Post" enctype="multipart/form-data">
     <div>
@@ -12,11 +12,20 @@
     <button type="submit">Submit</button>
 </form>
 
-<h3>Comments</h3>
-@foreach (var comment in Model.Comments)
+<h3>Posts</h3>
+@foreach (var post in Model)
 {
     <div>
-        <p>@comment.Author: @comment.Content</p>
-        <p>@comment.CreatedDate</p>
+        <h2>Post ID: @post.PostId</h2> <!-- Updated to use PostId -->
+        <p>Note: @post.Note.Content</p>
+        <p>Image URL: @post.Image.FileName</p>
+        <h3>Comments</h3>
+        @foreach (var comment in post.Comments)
+        {
+            <div>
+                <p>@comment.Author: @comment.Content</p>
+                <p>@comment.CreatedDate</p>
+            </div>
+        }
     </div>
 }

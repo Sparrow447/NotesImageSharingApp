@@ -3,7 +3,7 @@ namespace NotesImageSharingApp.Models
 {
     public class Post
     {
-        public int Id { get; set; }
+        public int PostId { get; set; }
         public string ImageUrl { get; set; }
         public DateTime CreatedDate { get; set; }
 
