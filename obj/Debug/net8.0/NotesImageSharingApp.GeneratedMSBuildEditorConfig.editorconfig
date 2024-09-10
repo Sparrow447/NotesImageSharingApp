@@ -18,6 +18,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = /Users/selmersolland/Documents/NotesImageSharingApp
 build_property._RazorSourceGeneratorDebug = 
 
+[/Users/selmersolland/Documents/NotesImageSharingApp/Pages/Image/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSW1hZ2UvSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/selmersolland/Documents/NotesImageSharingApp/Views/Comments/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ29tbWVudHMvQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

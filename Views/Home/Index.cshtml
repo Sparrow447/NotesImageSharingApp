@@ -1,8 +1,38 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿@model IEnumerable<NotesImageSharingApp.Models.Note>
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<h2>All Notes</h2>
+
+<!-- Search Bar -->
+<form method="get" action="/Notes/Index">
+    <input type="text" name="searchQuery" placeholder="Search notes" />
+    <button type="submit">Search</button>
+</form>
+
+<table>
+    <thead>
+    <tr>
+        <th>Title</th>
+        <th>Content Preview</th>
+        <th>Date Created</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var note in Model)
+    {
+        <tr>
+            <td>@note.Title</td>
+            <td>@note.Content.Substring(0, Math.Min(50, note.Content.Length))...</td>
+            <td>@note.DateCreated</td>
+            <td>
+                <a href="/Notes/Details/@note.NoteId" class="btn btn-info">View Details</a>
+                <a href="/Notes/Edit/@note.NoteId" class="btn btn-warning">Edit</a>
+                <a href="/Notes/Delete/@note.NoteId" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
+
+<!-- Button for creating a new note -->
+<a href="/Notes/Create" class="btn btn-primary">Create New Note</a>
