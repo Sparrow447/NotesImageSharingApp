@@ -1,3 +1,4 @@
+//image.cs model
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,8 @@ namespace NotesImageSharingApp.Models
     public class Image
     {
         [Key]
-        public int ImageId { get; set; }
+        public int? ImageId { get; set; }
+
 
         [Required]
         [StringLength(100)]
