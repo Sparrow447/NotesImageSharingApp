@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/selmersolland/Documents/NotesImageSharingApp/NotesImageSharingApp.csproj": {}
+    "C:\\Users\\karia\\OneDrive\\Dokumenter\\GitHub\\NotesImageSharingApp\\NotesImageSharingApp.csproj": {}
   },
   "projects": {
-    "/Users/selmersolland/Documents/NotesImageSharingApp/NotesImageSharingApp.csproj": {
+    "C:\\Users\\karia\\OneDrive\\Dokumenter\\GitHub\\NotesImageSharingApp\\NotesImageSharingApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/selmersolland/Documents/NotesImageSharingApp/NotesImageSharingApp.csproj",
+        "projectUniqueName": "C:\\Users\\karia\\OneDrive\\Dokumenter\\GitHub\\NotesImageSharingApp\\NotesImageSharingApp.csproj",
         "projectName": "NotesImageSharingApp",
-        "projectPath": "/Users/selmersolland/Documents/NotesImageSharingApp/NotesImageSharingApp.csproj",
-        "packagesPath": "/Users/selmersolland/.nuget/packages/",
-        "outputPath": "/Users/selmersolland/Documents/NotesImageSharingApp/obj/",
+        "projectPath": "C:\\Users\\karia\\OneDrive\\Dokumenter\\GitHub\\NotesImageSharingApp\\NotesImageSharingApp.csproj",
+        "packagesPath": "C:\\Users\\karia\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\karia\\OneDrive\\Dokumenter\\GitHub\\NotesImageSharingApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/selmersolland/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\karia\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -77,7 +77,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.401/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.401/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
