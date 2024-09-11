@@ -1,7 +1,8 @@
 //ApplicationDbContext.cs
 using Microsoft.EntityFrameworkCore;
+using NotesImageSharingApp.Models;
 
-namespace NotesImageSharingApp.Models
+namespace NotesImageSharingApp.Data
 {
     public class ApplicationDbContext : DbContext
     {

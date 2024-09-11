@@ -56,7 +56,7 @@ namespace NotesImageSharingApp.Controllers
                     PostId = model.PostId,
                     Content = model.Content,
                     Author = model.Author,
-                    CreatedDate = DateTime.Now
+                    DateCreated = DateTime.Now
                 };
 
                 _context.Comments.Add(comment);
@@ -75,7 +75,7 @@ namespace NotesImageSharingApp.Controllers
             }
             var model = new PostViewModel
             {
-            Note = post.Note,
+            Note = post.Content,
             ImageUrl = post.ImageUrl
             };
             return View(model);
@@ -84,7 +84,7 @@ namespace NotesImageSharingApp.Controllers
         [HttpPost]
         public async Task<IActionResult> Edit(int id, PostViewModel model)
         {
-            if (id != model.Id)
+            if (id != model.PostId)
             {
             return NotFound();
             }
