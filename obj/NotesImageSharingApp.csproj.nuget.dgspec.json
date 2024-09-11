@@ -1,7 +1,6 @@
 {
   "format": 1,
   "restore": {
-<<<<<<< HEAD
     "C:\\Users\\karia\\OneDrive\\Dokumenter\\GitHub\\NotesImageSharingApp\\NotesImageSharingApp.csproj": {}
   },
   "projects": {
@@ -16,22 +15,6 @@
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\karia\\AppData\\Roaming\\NuGet\\NuGet.Config"
-=======
-    "/Users/annacornelia/Documents/GitHub/NotesImageSharingApp/NotesImageSharingApp.csproj": {}
-  },
-  "projects": {
-    "/Users/annacornelia/Documents/GitHub/NotesImageSharingApp/NotesImageSharingApp.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "/Users/annacornelia/Documents/GitHub/NotesImageSharingApp/NotesImageSharingApp.csproj",
-        "projectName": "NotesImageSharingApp",
-        "projectPath": "/Users/annacornelia/Documents/GitHub/NotesImageSharingApp/NotesImageSharingApp.csproj",
-        "packagesPath": "/Users/annacornelia/.nuget/packages/",
-        "outputPath": "/Users/annacornelia/Documents/GitHub/NotesImageSharingApp/obj/",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "/Users/annacornelia/.nuget/NuGet/NuGet.Config"
->>>>>>> 1a2d335ec57e7cff7f9b03bd7aa1f3ddeba94b67
         ],
         "originalTargetFrameworks": [
           "net8.0"
