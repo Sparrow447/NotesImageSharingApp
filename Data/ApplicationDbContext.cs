@@ -1,16 +1,13 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+//ApplicationDbContext.cs
 using Microsoft.EntityFrameworkCore;
-using NotesImageSharingApp.Models;
 
-namespace NotesImageSharingApp.Data
+namespace NotesImageSharingApp.Models
 {
     public class ApplicationDbContext : DbContext
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
+            Database.EnsureCreated();
         }
         public DbSet<Post> Posts { get; set; }
         public DbSet<User> Users { get; set; }
