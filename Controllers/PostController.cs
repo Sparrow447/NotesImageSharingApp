@@ -1,19 +1,30 @@
 using Microsoft.AspNetCore.Mvc;
+using NotesImageSharingApp.Models; // Ensure this is present
+using NotesImageSharingApp.Data;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace NotesImageSharingApp.Controllers
 {
-    public class ImageController : Controller
+    public class PostController : Controller
     {
-        // GET: Images
-        public IActionResult Index()
+        private readonly ApplicationDbContext _context;
+
+        // Konstruktør som tar inn ApplicationDbContext
+        public PostController(ApplicationDbContext context)
         {
-<<<<<<< HEAD
-            return View(); // Ensure the Index view exists
-=======
             _context = context;
         }
 
-        [HttpPost]
+        // GET: Posts/Index
+        public IActionResult Index()
+        {
+            var posts = _context.Posts.ToList();  // Eksempel på hvordan du kan bruke _context
+            return View(posts);
+        }
+
+    [HttpPost]
     public async Task<IActionResult> Create(PostViewModel model)
     {
         if (ModelState.IsValid)
@@ -147,7 +158,6 @@ namespace NotesImageSharingApp.Controllers
             _context.Posts.Remove(post);
             await _context.SaveChangesAsync();
             return RedirectToAction("Index");
->>>>>>> 9b9e30d1afa633fed07e20cb5d5644b3d81abb61
         }
     }
 }

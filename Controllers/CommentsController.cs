@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using NotesImageSharingApp.Models;
+using NotesImageSharingApp.Data; 
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -59,14 +59,5 @@ namespace NotesImageSharingApp.Controllers
             return View(comment);
         }
     }
-}
 
-    public class CommentsController : Controller
-    {
-        // GET: Comments
-        public IActionResult Index()
-        {
-            return View(); // Ensure the Index view exists
-        }
-    }
 }
