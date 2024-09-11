@@ -12,7 +12,7 @@ namespace NotesImageSharingApp.Models
         public int CommentId { get; set; }
         public int PostId { get; set; }
         public string Content { get; set; }
-        public string Author { get; set; }
+        public string UserId { get; set; }
         public DateTime CreatedDate { get; set; }
 
         public Post Post { get; set; }

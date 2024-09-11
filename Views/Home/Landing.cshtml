@@ -1,0 +1,48 @@
+@{
+    ViewData["Title"] = "Welcome to the Notes/Image Sharing Platform";
+}
+
+<div class="container mt-4">
+    <header class="text-center mb-4">
+        <h1>Welcome to the Notes/Image Sharing Platform</h1>
+        <p class="lead">Discover the ultimate platform to manage your notes and share your images.</p>
+    </header>
+
+    <section class="text-center mb-4">
+        <h2>Why Sign In?</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Personalized Experience</h5>
+                        <p class="card-text">Sign in to get a personalized experience. Manage your notes and images with ease.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Save Your Data</h5>
+                        <p class="card-text">Keep your notes and images safe and accessible from any device by signing in.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Share and Comment</h5>
+                        <p class="card-text">Engage with the community by sharing your images and commenting on others' content.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="text-center">
+        <h2>Get Started</h2>
+        <p class="lead">Already a member? <a href="@Url.Action("Login", "Account")">Sign In</a> to continue.</p>
+        <p class="lead">New here? <a href="@Url.Action("Register", "Account")">Create an Account</a> and start exploring!</p>
+    </section>
+</div>

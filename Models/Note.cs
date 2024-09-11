@@ -17,7 +17,7 @@ namespace NotesImageSharingApp.Models
         public string Title { get; set; }
 
         [Required]
-        public string Content { get; set; }
+        public string Content { get; set; } // Easier to name it content than note 
 
         public DateTime DateCreated { get; set; } = DateTime.Now;
 

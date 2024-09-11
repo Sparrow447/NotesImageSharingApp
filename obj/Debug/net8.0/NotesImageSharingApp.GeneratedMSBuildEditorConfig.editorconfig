@@ -46,8 +46,17 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+<<<<<<< HEAD
 [C:/Users/karia/OneDrive/Dokumenter/GitHub/NotesImageSharingApp/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+=======
+[/Users/annacornelia/Documents/GitHub/NotesImageSharingApp/Views/Home/Landing.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9MYW5kaW5nLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/annacornelia/Documents/GitHub/NotesImageSharingApp/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Qcml2YWN5LmNzaHRtbA==
+>>>>>>> 9b9e30d1afa633fed07e20cb5d5644b3d81abb61
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/karia/OneDrive/Dokumenter/GitHub/NotesImageSharingApp/Views/Post/Create.cshtml]
