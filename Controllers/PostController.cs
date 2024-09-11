@@ -18,33 +18,33 @@ namespace NotesImageSharingApp.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(PostViewModel model)
+    public async Task<IActionResult> Create(PostViewModel model)
+    {
+        if (ModelState.IsValid)
         {
-            if (ModelState.IsValid)
+            var post = new Post
             {
-                var post = new Post
-                {
-                    Note = model.Note,
-                    CreatedDate = DateTime.Now
-                };
+                Content = model.Content,  // Changed from Note to Content
+                CreatedDate = DateTime.Now
+            };
 
-                if (model.Image != null)
+            // Handle image upload
+            if (model.Image != null)
+            {
+                var fileName = Path.GetFileName(model.Image.FileName);
+                var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images", fileName);
+                using (var stream = new FileStream(filePath, FileMode.Create))
                 {
-                    var fileName = Path.GetFileName(model.Image.FileName);
-                    var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images", fileName);
-                    using (var stream = new FileStream(filePath, FileMode.Create))
-                    {
-                        await model.Image.CopyToAsync(stream);
-                    }
-                    post.ImageUrl = "/images/" + fileName;
+                    await model.Image.CopyToAsync(stream);
                 }
-
-                _context.Posts.Add(post);
-                await _context.SaveChangesAsync();
-                return RedirectToAction("Index");
             }
-            return View(model);
+
+            _context.Posts.Add(post);
+            await _context.SaveChangesAsync();
+            return RedirectToAction("Index");
         }
+        return View(model);
+    }
 
         [HttpPost]
         public async Task<IActionResult> AddComment(CommentViewModel model)
@@ -66,18 +66,40 @@ namespace NotesImageSharingApp.Controllers
             return View(model);
         }
 
-        public async Task<IActionResult> Edit(int id)
+        [HttpPost]
+        public async Task<IActionResult> Edit(
+            int id, PostViewModel model)
         {
-            var post = await _context.Posts.FindAsync(id);
-            if (post == null)
+            if (id != model.PostId)
             {
-            return NotFound();
+                return NotFound();
             }
-            var model = new PostViewModel
+
+            if (ModelState.IsValid)
             {
-            Note = post.Content,
-            ImageUrl = post.ImageUrl
-            };
+                var post = await _context.Posts.FindAsync(id);
+                if (post == null)
+                {
+                    return NotFound();
+                }
+
+                post.Content = model.Content;
+
+                // Handle image upload
+                if (model.Image != null)
+                {
+                    var fileName = Path.GetFileName(model.Image.FileName);
+                    var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images", fileName);
+                    using (var stream = new FileStream(filePath, FileMode.Create))
+                    {
+                        await model.Image.CopyToAsync(stream);
+                    }
+                }
+
+                _context.Posts.Update(post);
+                await _context.SaveChangesAsync();
+                return RedirectToAction("Index");
+            }
             return View(model);
         }
 
